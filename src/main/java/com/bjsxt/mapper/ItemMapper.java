@@ -1,6 +1,7 @@
 package com.bjsxt.mapper;
 
 import com.bjsxt.pojo.Item;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -12,9 +13,10 @@ public interface ItemMapper {
     @Select("select * from item")
     List<Item> selectAll();
 
-    /*//根据id删除信息
+    //根据id删除信息
+    @Delete("delete from item where id=#{id}")
     int deleteById(Long id);
-
+/*
     //根据id查询信息
     Item selectById(Long id);
 

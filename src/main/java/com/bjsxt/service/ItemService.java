@@ -7,7 +7,7 @@ import java.util.List;
 public interface ItemService {
     List<Item> selectAll();
 
-   /* int deleteById(Long id);
-
+   int deleteById(Long id);
+/*
     int buy(Long id);*/
 }

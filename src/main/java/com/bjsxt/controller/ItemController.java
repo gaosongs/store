@@ -27,12 +27,12 @@ public class ItemController {
     }
 
 
-    /*@RequestMapping("/delete")
+    @RequestMapping("/delete")
     @ResponseBody
     public int deleteById(Long id) {
         return itemService.deleteById(id);
     }
-
+/*
     @RequestMapping("/buy")
     @ResponseBody
     public int buy(Long id) {

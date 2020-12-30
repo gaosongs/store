@@ -20,7 +20,7 @@
                 $("#mytbody").html(result);
             },"json");
 
-            /*$("#mytbody").on("click",".deleteEle",function () {
+            $("#mytbody").on("click",".deleteEle",function () {
                 if(confirm("确认要删除吗，删除后数据不可恢复？")){
                     var $deleteEle = $(this);
                     $.post($deleteEle.attr("href"),function (data) {
@@ -31,7 +31,7 @@
                 }
                 return false;
             });
-            
+            /*
             $("#mytbody").on("click",".buyEle",function () {
                 if(confirm("确认要购买当前商品吗？")){
                     var $buyEle = $(this);

@@ -21,12 +21,12 @@ public class ItemServiceImpl implements ItemService {
         return itemMapper.selectAll();
     }
 
-    /*@Override
+    @Override
     public int deleteById(Long id) {
         return itemMapper.deleteById(id);
     }
 
-
+/*
     @Override
     // 没有他，能事务回滚吗？
     @Transactional
