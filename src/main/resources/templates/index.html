@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            $.post("/list",function (data) {
+                var result = "";
+                for(var i in data){
+                    result += "<tr>";
+                    result += "<td>"+data[i].id+"</td>";
+                    result += "<td>"+data[i].title+"</td>";
+                    result += "<td>"+data[i].price+"</td>";
+                    result += "<td>"+data[i].num+"</td>";
+                    result += "<td><a href='/buy?id="+data[i].id+"' class='buyEle'>购买</a> <a href='/delete?id="+data[i].id+"' class='deleteEle'>删除</a> </td>";
+                    result += "</tr>";
+                }
+                $("#mytbody").html(result);
+            },"json");
+
+            /*$("#mytbody").on("click",".deleteEle",function () {
+                if(confirm("确认要删除吗，删除后数据不可恢复？")){
+                    var $deleteEle = $(this);
+                    $.post($deleteEle.attr("href"),function (data) {
+                        if(data>0){
+                            $deleteEle.parent().parent().remove();
+                        }
+                    })
+                }
+                return false;
+            });
+            
+            $("#mytbody").on("click",".buyEle",function () {
+                if(confirm("确认要购买当前商品吗？")){
+                    var $buyEle = $(this);
+                    $.post($buyEle.attr("href"),function (data) {
+                        if(data>0){
+                            alert("购买成功");
+                            var num = parseInt($buyEle.parent().prev().html());
+                            $buyEle.parent().prev().html(num-1);
+                        }else{
+                            alert("购买失败");
+                        }
+                    });
+                }
+                return false;
+            })*/
+        });
+    </script>
+</head>
+<body>
+    <table border="1" width="800">
+        <tr>
+            <td>编号</td>
+            <td>标题</td>
+            <td>价格</td>
+            <td>数量</td>
+            <td>操作</td>
+        </tr>
+        <tbody id="mytbody">
+
+        </tbody>
+    </table>
+</body>
+</html>
